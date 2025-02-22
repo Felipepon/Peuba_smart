@@ -6,6 +6,7 @@ public class Booking
     public DateTime CheckInDate { get; set; }
     public DateTime CheckOutDate { get; set; }
     public Guid RoomId { get; set; }
+    public Room Room { get; set; } = null!; // <-- Inicialización con null!
     public List<Guest> Guests { get; set; } = new();
     public EmergencyContact EmergencyContact { get; set; } = new();
 }

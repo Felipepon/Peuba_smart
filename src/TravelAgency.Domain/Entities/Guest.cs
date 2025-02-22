@@ -1,3 +1,5 @@
+using TravelAgency.Domain.Entities;
+
 namespace TravelAgency.Domain.Entities;
 
 public class Guest
@@ -10,4 +12,8 @@ public class Guest
     public string DocumentNumber { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
     public string Phone { get; set; } = string.Empty;
+    
+    // Propiedad para la relación con Booking
+    public Guid BookingId { get; set; }
+    public Booking Booking { get; set; } = null!; // <-- Navegación inversa
 }

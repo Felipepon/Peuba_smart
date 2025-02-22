@@ -1,3 +1,5 @@
+using TravelAgency.Domain.Enums;
+
 namespace TravelAgency.Domain.Entities;
 
 public class Room

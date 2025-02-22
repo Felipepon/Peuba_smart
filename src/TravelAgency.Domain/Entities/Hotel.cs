@@ -1,3 +1,5 @@
+
+using TravelAgency.Domain.Entities;
 namespace TravelAgency.Domain.Entities;
 
 public class Hotel

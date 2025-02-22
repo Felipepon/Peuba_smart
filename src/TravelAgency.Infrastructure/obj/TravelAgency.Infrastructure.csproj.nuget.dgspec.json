@@ -4,14 +4,14 @@
     "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Infrastructure/TravelAgency.Infrastructure.csproj": {}
   },
   "projects": {
-    "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Infrastructure/TravelAgency.Infrastructure.csproj": {
+    "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Domain/TravelAgency.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Infrastructure/TravelAgency.Infrastructure.csproj",
-        "projectName": "TravelAgency.Infrastructure",
-        "projectPath": "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Infrastructure/TravelAgency.Infrastructure.csproj",
+        "projectUniqueName": "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Domain/TravelAgency.Domain.csproj",
+        "projectName": "TravelAgency.Domain",
+        "projectPath": "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Domain/TravelAgency.Domain.csproj",
         "packagesPath": "/home/andres/.nuget/packages/",
-        "outputPath": "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Infrastructure/obj/",
+        "outputPath": "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/andres/.nuget/NuGet/NuGet.Config"
@@ -53,7 +53,80 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/andres/.dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.112/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Infrastructure/TravelAgency.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Infrastructure/TravelAgency.Infrastructure.csproj",
+        "projectName": "TravelAgency.Infrastructure",
+        "projectPath": "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Infrastructure/TravelAgency.Infrastructure.csproj",
+        "packagesPath": "/home/andres/.nuget/packages/",
+        "outputPath": "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/andres/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Domain/TravelAgency.Domain.csproj": {
+                "projectPath": "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Domain/TravelAgency.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.112/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

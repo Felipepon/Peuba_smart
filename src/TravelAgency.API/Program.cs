@@ -1,13 +1,28 @@
+using Microsoft.EntityFrameworkCore;
+using TravelAgency.Infrastructure.Data;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure; // Añadir este using
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// Registrar el DbContext para MySQL
+builder.Services.AddDbContext<AppDbContext>(options => 
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+         new MariaDbServerVersion(new Version(10, 4, 32)), // Versión de tu MySQL
+        mysqlOptions => 
+        {
+            mysqlOptions.EnableRetryOnFailure();
+        }
+    )
+);
+
+// Servicios existentes
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configuración del pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -16,29 +31,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast")
-.WithOpenApi();
+app.MapGet("/", () => "¡La API de TravelAgency está funcionando con MySQL!");
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "TravelAgency.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/TravelAgency.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TravelAgency.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "TravelAgency.Domain/1.0.0": {
+      "type": "project",
+      "path": "../TravelAgency.Domain/TravelAgency.Domain.csproj",
+      "msbuildProject": "../TravelAgency.Domain/TravelAgency.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "TravelAgency.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/home/andres/.nuget/packages/": {}
@@ -31,7 +50,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Domain/TravelAgency.Domain.csproj": {
+              "projectPath": "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Domain/TravelAgency.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -59,7 +82,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/andres/.dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.112/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
