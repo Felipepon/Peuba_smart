@@ -1,4 +1,4 @@
-// TravelAgency.Domain/Interfaces/IHotelRepository.cs
+
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using TravelAgency.Domain.Entities;
@@ -12,5 +12,5 @@ public interface IHotelRepository
     Task AddAsync(Hotel hotel);
     Task UpdateAsync(Hotel hotel);
     Task ToggleStatusAsync(Guid hotelId);
-    Task<List<Hotel>> GetAllAsync(); // Método añadido
+    Task<List<Hotel>> GetAllAsync();
 }
