@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "5sfuiHRCAXintdk58DYjSWDvIn8SP1ksaIwK/nLpyabDoK3qe+AoeIZtE5Kh55+RUtJvqADQgNyvZVHiCTeODg==",
+  "dgSpecHash": "6NmWzTWntxZDpC3HHgM4izGKVzYeE0W65x1N37wv1280hhk6b2pJXEQIB6zXhK2XGxcjWFqvgfjrP12jmtiRlA==",
   "success": true,
   "projectFilePath": "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Application/TravelAgency.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/andres/.nuget/packages/fluentvalidation/11.11.0/fluentvalidation.11.11.0.nupkg.sha512",
+    "/home/andres/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.11.0/fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",
+    "/home/andres/.nuget/packages/mediatr/12.0.1/mediatr.12.0.1.nupkg.sha512",
+    "/home/andres/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
+    "/home/andres/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

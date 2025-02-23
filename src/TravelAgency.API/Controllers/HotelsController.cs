@@ -2,6 +2,9 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using TravelAgency.Application.Features.Hotels.Commands;
 using TravelAgency.Application.Features.Hotels.Queries;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
+using Microsoft.IdentityModel.Tokens;
 
 namespace TravelAgency.API.Controllers;
 
@@ -31,14 +34,18 @@ public class HotelsController : ControllerBase
         return Ok(hotel);
     }
 
+    [HttpGet]
+    public async Task<IActionResult> GetHotels()
+    {
+        var hotels = await _mediator.Send(new GetHotelsQuery());
+        return Ok(hotels);
+    }
+
     [HttpPut("{id:guid}")]
     [Authorize(Roles = "Agent")]
-    public async Task<IActionResult> UpdateHotel(
-        Guid id,
-        [FromBody] UpdateHotelCommand command)
+    public async Task<IActionResult> UpdateHotel(Guid id, [FromBody] UpdateHotelCommand command)
     {
-        command = command with { Id = id };
-        await _mediator.Send(command);
+        await _mediator.Send(command with { Id = id });
         return NoContent();
     }
 

@@ -1,15 +1,23 @@
-
+// TravelAgency.Domain/Entities/Hotel.cs
 using TravelAgency.Domain.Entities;
-namespace TravelAgency.Domain.Entities;
 
 public class Hotel
 {
-    public Guid Id { get; set; } = Guid.NewGuid();
+    public Guid Id { get; set; }
     public string Name { get; set; } = string.Empty;
     public string City { get; set; } = string.Empty;
     public bool IsEnabled { get; set; } = true;
-    public List<Room> Rooms { get; set; } = new();
+    public List<Room> Rooms { get; set; } = new List<Room>();
 
-    
+    // Constructor sin parámetros (necesario para EF Core)
+    public Hotel() { }
+
+    // Constructor con parámetros
+    public Hotel(string name, string city)
+    {
+        Name = name;
+        City = city;
+    }
+
     public void ToggleStatus() => IsEnabled = !IsEnabled;
 }
