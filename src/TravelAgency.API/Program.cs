@@ -69,7 +69,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
            ValidateAudience = false,
            ValidateLifetime = true,
            ClockSkew = TimeSpan.Zero,
-           RoleClaimType = "http://schemas.microsoft.com/ws/2008/06/identity/claims/role" // 👈 Configura el rol esperado
+           RoleClaimType = "http://schemas.microsoft.com/ws/2008/06/identity/claims/role" 
        };
     });
 
@@ -135,7 +135,7 @@ builder.Services.AddSwaggerGen(c =>
     {
         Example = (IOpenApiAny)new OpenApiObject
         {
-            ["Type"] = new OpenApiString("Standard"),  // Valores: Standard, Deluxe, Suite
+            ["Type"] = new OpenApiString("Standard"),  
             ["BaseCost"] = new OpenApiDouble(100.0),
             ["Taxes"] = new OpenApiDouble(10.0),
             ["Location"] = new OpenApiString("Piso 3, Habitación 301")
@@ -239,7 +239,7 @@ app.MapPost("/api/auth/login", (string role) =>
     {
         new Claim(JwtRegisteredClaimNames.Sub, Guid.NewGuid().ToString()),
         new Claim(JwtRegisteredClaimNames.Name, "John Doe"),
-        new Claim(ClaimTypes.Role, role), // 👈 Usar el rol proporcionado
+        new Claim(ClaimTypes.Role, role), 
         new Claim(JwtRegisteredClaimNames.Iat, DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString(), ClaimValueTypes.Integer64)
     };
 
