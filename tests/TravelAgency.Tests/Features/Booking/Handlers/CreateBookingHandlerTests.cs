@@ -1,4 +1,4 @@
-// tests/TravelAgency.Tests/Features/Bookings/Handlers/CreateBookingHandlerTests.cs
+
 using Moq;
 using System;
 using System.Collections.Generic;
@@ -86,7 +86,7 @@ namespace TravelAgency.Tests.Features.Bookings.Handlers
         [Fact]
         public async Task Handle_InvalidRoomId_ThrowsKeyNotFoundException()
         {
-            // Arrange
+            
             var roomId = Guid.NewGuid();
             var command = new CreateBookingCommand(
                 roomId,
@@ -113,7 +113,7 @@ namespace TravelAgency.Tests.Features.Bookings.Handlers
             _mockRoomRepository.Setup(repo => repo.GetByIdAsync(roomId))
                 .ReturnsAsync((Room)null);
 
-            // Act & Assert
+            
             await Assert.ThrowsAsync<KeyNotFoundException>(() => _handler.Handle(command, CancellationToken.None));
         }
     }
