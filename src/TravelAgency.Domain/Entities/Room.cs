@@ -1,20 +1,31 @@
+// src/TravelAgency.Domain/Entities/Room.cs
+using System;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
+using TravelAgency.Domain.Common;
+using TravelAgency.Domain.Enums;
+using TravelAgency.Domain.Entities;
 
-namespace TravelAgency.Domain.Entities;
-
-
-public class Room : BaseEntity
+namespace TravelAgency.Domain.Entities
 {
-    public RoomType Type { get; set; }
-    public decimal BaseCost { get; set; }
-    public decimal Taxes { get; set; }
-    public string Location { get; set; } = string.Empty;
-    public bool IsEnabled { get; set; } = true;
-    public Guid HotelId { get; set; }
-    public Hotel Hotel { get; set; } = null!;
+    public class Room : BaseEntity
+    {
+        public RoomType Type { get; set; }
+        public decimal BaseCost { get; set; }
+        public decimal Taxes { get; set; }
+        public string Location { get; set; } = string.Empty;
+        public bool IsEnabled { get; set; } = true;
+        public Guid HotelId { get; set; }
 
-   
-    public decimal TotalCost => BaseCost + Taxes;
+        [JsonIgnore] // Ignorar la propiedad Hotel para evitar ciclos de referencia
+        public Hotel Hotel { get; set; } = null!;
+        
+        public List<Booking> Bookings { get; set; } = new();
+        public int MaxGuests { get; set; }
+        public string City { get; set; } = string.Empty;
 
-   
-    public bool CanAccommodate(int guests) => guests <= RoomTypeDetails.GetCapacity(Type);
+        public decimal TotalCost => BaseCost + Taxes;
+
+        public bool CanAccommodate(int guests) => guests <= RoomTypeDetails.GetCapacity(Type);
+    }
 }

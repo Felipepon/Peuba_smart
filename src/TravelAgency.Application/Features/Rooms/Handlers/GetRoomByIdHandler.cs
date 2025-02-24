@@ -1,5 +1,8 @@
+// src/TravelAgency.Application/Features/Rooms/Handlers/GetRoomByIdHandler.cs
+using MediatR;
 using TravelAgency.Domain.Entities;
 using TravelAgency.Domain.Interfaces;
+using TravelAgency.Application.Features.Rooms.Queries;
 
 namespace TravelAgency.Application.Features.Rooms.Handlers;
 
@@ -14,6 +17,6 @@ public class GetRoomByIdHandler : IRequestHandler<GetRoomByIdQuery, Room>
 
     public async Task<Room> Handle(GetRoomByIdQuery request, CancellationToken cancellationToken)
     {
-        return await _repository.GetByIdAsync(request.Id);
+        return await _repository.GetByIdAsync(request.RoomId); // <-- Cambiar a RoomId
     }
 }

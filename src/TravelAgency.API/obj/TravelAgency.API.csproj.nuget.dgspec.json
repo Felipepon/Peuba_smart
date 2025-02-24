@@ -29,6 +29,9 @@
               "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Application/TravelAgency.Application.csproj": {
                 "projectPath": "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Application/TravelAgency.Application.csproj"
               },
+              "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Domain/TravelAgency.Domain.csproj": {
+                "projectPath": "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Domain/TravelAgency.Domain.csproj"
+              },
               "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Infrastructure/TravelAgency.Infrastructure.csproj": {
                 "projectPath": "/mnt/c/Users/felip/OneDrive/Escritorio/Prueba backend smart talent/src/TravelAgency.Infrastructure/TravelAgency.Infrastructure.csproj"
               }
@@ -45,6 +48,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.1, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -61,15 +68,19 @@
             },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
-              "version": "[7.0.3, )"
+              "version": "[7.1.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
             },
+            "Swashbuckle.AspNetCore.Filters": {
+              "target": "Package",
+              "version": "[7.0.6, )"
+            },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[7.0.3, )"
+              "version": "[7.1.2, )"
             }
           },
           "imports": [
@@ -143,7 +154,11 @@
             },
             "MediatR": {
               "target": "Package",
-              "version": "[12.0.1, )"
+              "version": "[12.4.1, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.1.0, )"
             }
           },
           "imports": [
@@ -270,6 +285,10 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.29.3, )"
             }
           },
           "imports": [
