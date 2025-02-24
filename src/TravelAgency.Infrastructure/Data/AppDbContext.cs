@@ -29,10 +29,10 @@ public class AppDbContext : DbContext
             .WithMany(b => b.Guests)
             .HasForeignKey(g => g.BookingId);
 
-        // Configurar la relación uno a uno entre Booking y EmergencyContact
+       
         modelBuilder.Entity<Booking>()
             .HasOne(b => b.EmergencyContact)
             .WithOne(ec => ec.Booking)
-            .HasForeignKey<EmergencyContact>(ec => ec.BookingId); // <-- Configurar la clave foránea
+            .HasForeignKey<EmergencyContact>(ec => ec.BookingId); 
     }
 }

@@ -1,4 +1,4 @@
-// src/TravelAgency.Domain/Entities/Room.cs
+
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
@@ -17,7 +17,7 @@ namespace TravelAgency.Domain.Entities
         public bool IsEnabled { get; set; } = true;
         public Guid HotelId { get; set; }
 
-        [JsonIgnore] // Ignorar la propiedad Hotel para evitar ciclos de referencia
+        [JsonIgnore] 
         public Hotel Hotel { get; set; } = null!;
         
         public List<Booking> Bookings { get; set; } = new();

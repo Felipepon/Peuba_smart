@@ -1,4 +1,4 @@
-// src/TravelAgency.Domain/Enums/RoomTypeDetails.cs
+
 namespace TravelAgency.Domain.Enums;
 
 public static class RoomTypeDetails

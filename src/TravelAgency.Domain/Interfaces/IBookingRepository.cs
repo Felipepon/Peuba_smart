@@ -1,4 +1,4 @@
-// src/TravelAgency.Domain/Interfaces/IBookingRepository.cs
+
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
@@ -15,5 +15,5 @@ public interface IBookingRepository
     Task UpdateAsync(Booking booking);
     Task DeleteAsync(Booking booking);
     Task<List<Booking>> GetBookingsByRoomAsync(Guid roomId);
-    Task<EmergencyContact> GetEmergencyContactAsync(Guid bookingId); // <-- Agregar esta línea
+    Task<EmergencyContact> GetEmergencyContactAsync(Guid bookingId); 
 }

@@ -1,4 +1,4 @@
-// BookingDetailsResponse.cs (Application)
+
 using MediatR;
 
 namespace TravelAgency.Application.DTOs;

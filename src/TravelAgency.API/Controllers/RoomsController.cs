@@ -1,4 +1,4 @@
-// src/TravelAgency.API/Controllers/RoomsController.cs
+
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;

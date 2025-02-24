@@ -3,7 +3,7 @@ namespace TravelAgency.Application.DTOs
     public record GuestDto(
         string FullName,
         DateTime BirthDate,
-        string Gender, // También podrías mapearlo a un enum si configuras la conversión
+        string Gender, 
         string DocumentType,
         string DocumentNumber,
         string Email,

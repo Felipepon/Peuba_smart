@@ -23,7 +23,7 @@ namespace TravelAgency.Application.Features.Bookings.Handlers
 
         public async Task<Guid> Handle(CreateBookingCommand request, CancellationToken cancellationToken)
         {
-            // Validaciones
+            
             if (request.Guests == null || !request.Guests.Any())
                 throw new ArgumentException("Debe haber al menos un huésped.");
             if (request.CheckOutDate <= request.CheckInDate)
@@ -35,11 +35,11 @@ namespace TravelAgency.Application.Features.Bookings.Handlers
             if (!room.IsEnabled || !await IsRoomAvailable(request.RoomId, request.CheckInDate, request.CheckOutDate))
                 throw new InvalidOperationException("La habitación no está disponible");
 
-            // Calcular costo total
+            
             var totalDays = (request.CheckOutDate - request.CheckInDate).Days;
             var totalCost = (room.BaseCost + room.Taxes) * totalDays;
 
-            // Crear la entidad Booking
+            
             var booking = new Booking
             {
                 CheckInDate = request.CheckInDate,
@@ -48,20 +48,20 @@ namespace TravelAgency.Application.Features.Bookings.Handlers
                 TotalCost = totalCost
             };
 
-            // Mapear cada GuestDto a Guest y asignar la relación Booking
+            
             booking.Guests = request.Guests.Select(dto => new Guest
             {
                 FullName = dto.FullName,
                 BirthDate = dto.BirthDate,
-                Gender = Enum.Parse<Gender>(dto.Gender), // Convertir string a Gender
-                DocumentType = Enum.Parse<DocumentType>(dto.DocumentType), // Convertir string a DocumentType
+                Gender = Enum.Parse<Gender>(dto.Gender), 
+                DocumentType = Enum.Parse<DocumentType>(dto.DocumentType), 
                 DocumentNumber = dto.DocumentNumber,
                 Email = dto.Email,
                 Phone = dto.Phone,
                 Booking = booking
             }).ToList();
 
-            // Mapear EmergencyContactDto a EmergencyContact y asignar la relación Booking
+           
             booking.EmergencyContact = new EmergencyContact
             {
                 FullName = request.EmergencyContact.FullName,
@@ -69,10 +69,10 @@ namespace TravelAgency.Application.Features.Bookings.Handlers
                 Booking = booking
             };
 
-            // Persistir la reserva (asegúrate de que el repositorio llame a SaveChangesAsync o se use un Unit of Work)
+            
             await _bookingRepository.AddAsync(booking);
 
-            // Enviar correo de confirmación (manejo de errores en el envío de correo)
+           
             try
             {
                 var guestEmail = booking.Guests.First().Email;
@@ -80,7 +80,7 @@ namespace TravelAgency.Application.Features.Bookings.Handlers
             }
             catch (Exception ex)
             {
-                // Registrar el error y continuar
+                
                 Console.WriteLine($"Error al enviar correo: {ex.Message}");
             }
 

@@ -28,7 +28,7 @@ json
     dotnet ef database update --project src/TravelAgency.Infrastructure
 
 ## 🔑 Autenticación
--Genera tokens JWT para pruebas: 
+Genera tokens JWT para pruebas: 
   ```bash
   POST /api/auth/login
   Body: "Agent"  # Rol: Agent (Gestión) | Traveler (Reservas)

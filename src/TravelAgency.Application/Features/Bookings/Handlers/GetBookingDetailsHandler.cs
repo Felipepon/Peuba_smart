@@ -1,4 +1,4 @@
-// src/TravelAgency.Application/Features/Bookings/Handlers/GetBookingDetailsHandler.cs
+
 using TravelAgency.Domain.Entities;
 using TravelAgency.Domain.Interfaces;
 using MediatR;
@@ -21,8 +21,8 @@ public class GetBookingDetailsHandler : IRequestHandler<GetBookingDetailsQuery, 
         var guests = booking.Guests.Select(g => new GuestResponse(
             g.FullName,
             g.BirthDate,
-            g.Gender.ToString(), // <-- Convertir a string
-            g.DocumentType.ToString(), // <-- Convertir a string
+            g.Gender.ToString(), 
+            g.DocumentType.ToString(), 
             g.DocumentNumber,
             g.Email,
             g.Phone
@@ -34,7 +34,7 @@ public class GetBookingDetailsHandler : IRequestHandler<GetBookingDetailsQuery, 
             booking.CheckOutDate,
             booking.TotalCost,
             booking.Room.Hotel.Name,
-            booking.Room.Type.ToString(), // <-- Cambiar a Type
+            booking.Room.Type.ToString(), 
             guests,
             new EmergencyContactResponse(
                 booking.EmergencyContact.FullName,

@@ -1,4 +1,4 @@
-// src/TravelAgency.Domain/Entities/Booking.cs
+
 using TravelAgency.Domain.Enums;
 
 namespace TravelAgency.Domain.Entities

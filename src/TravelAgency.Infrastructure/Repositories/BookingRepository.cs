@@ -1,4 +1,4 @@
-// src/TravelAgency.Infrastructure/Repositories/BookingRepository.cs
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,13 +37,22 @@ public class BookingRepository : IBookingRepository
     }
 
     public async Task AddAsync(Booking booking)
-{
-    await _context.Bookings.AddAsync(booking);
-    await _context.SaveChangesAsync(); // Persistir los cambios en la base de datos
-}
+    {
+        await _context.Bookings.AddAsync(booking);
+        await _context.SaveChangesAsync(); 
+    }
 
-    public async Task UpdateAsync(Booking booking) => _context.Bookings.Update(booking);
-    public async Task DeleteAsync(Booking booking) => _context.Bookings.Remove(booking);
+    public Task UpdateAsync(Booking booking)
+    {
+        _context.Bookings.Update(booking);
+        return Task.CompletedTask;
+    }
+
+    public Task DeleteAsync(Booking booking)
+    {
+        _context.Bookings.Remove(booking);
+        return Task.CompletedTask;
+    }
     public async Task<List<Booking>> GetBookingsByRoomAsync(Guid roomId)
     {
         return await _context.Bookings
@@ -54,6 +63,6 @@ public class BookingRepository : IBookingRepository
     public async Task<EmergencyContact> GetEmergencyContactAsync(Guid bookingId)
     {
         return await _context.EmergencyContacts
-            .FirstOrDefaultAsync(ec => ec.Booking.Id == bookingId); // <-- Utilizar ec.Booking.Id
+            .FirstOrDefaultAsync(ec => ec.Booking.Id == bookingId); 
     }
 }

@@ -1,4 +1,4 @@
-// src/TravelAgency.Infrastructure/Repositories/RoomRepository.cs
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +31,7 @@ public class RoomRepository : IRoomRepository
     {
         return await _context.Rooms
             .Where(r => r.IsEnabled && 
-                r.MaxGuests >= guests && // <-- Cambiar a MaxGuests
+                r.MaxGuests >= guests && 
                 r.City == city && 
                 !r.Bookings.Any(b => 
                     b.CheckInDate < checkOut && 
@@ -49,7 +49,7 @@ public class RoomRepository : IRoomRepository
     public async Task AddAsync(Room room)
 {
     await _context.Rooms.AddAsync(room);
-    await _context.SaveChangesAsync(); // Guarda los cambios en la base de datos
+    await _context.SaveChangesAsync(); 
 }
 
     public Task UpdateAsync(Room room)
@@ -57,7 +57,11 @@ public class RoomRepository : IRoomRepository
         _context.Rooms.Update(room);
         return Task.CompletedTask;
     }
-    public async Task DeleteAsync(Room room) => _context.Rooms.Remove(room);
+    public Task DeleteAsync(Room room)
+    {
+        _context.Rooms.Remove(room);
+        return Task.CompletedTask;
+    }
 
     public async Task<List<Room>> GetRoomsByHotelIdAsync(Guid hotelId)
     {

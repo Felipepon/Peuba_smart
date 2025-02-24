@@ -1,4 +1,4 @@
-// src/TravelAgency.Application/Features/Bookings/Handlers/GetAvailableRoomsHandler.cs
+
 using TravelAgency.Domain.Entities;
 using TravelAgency.Domain.Interfaces;
 using TravelAgency.Application.Features.Rooms.Commands;
@@ -22,7 +22,7 @@ public class GetAvailableRoomsHandler : IRequestHandler<GetAvailableRoomsQuery, 
             request.CheckInDate,
             request.CheckOutDate,
             request.Guests,
-            request.City // <-- Asegúrate de proporcionar todos los argumentos necesarios
+            request.City 
         );
 
         return rooms;

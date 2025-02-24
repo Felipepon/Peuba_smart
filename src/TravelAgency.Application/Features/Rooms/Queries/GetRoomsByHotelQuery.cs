@@ -1,4 +1,4 @@
-// src/TravelAgency.Application/Features/Rooms/Queries/GetRoomsByHotelQuery.cs
+
 using MediatR;
 using TravelAgency.Domain.Entities;
 

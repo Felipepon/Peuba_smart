@@ -1,4 +1,4 @@
-// TravelAgency.Application/Features/Hotels/Commands/UpdateHotelCommand.cs
+
 using MediatR;
 
 namespace TravelAgency.Application.Features.Hotels.Commands;

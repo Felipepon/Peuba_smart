@@ -1,4 +1,4 @@
-// src/TravelAgency.Domain/Interfaces/IEmailService.cs
+
 using System.Threading.Tasks;
 using TravelAgency.Domain.Entities;
 

@@ -1,4 +1,4 @@
-// src/TravelAgency.Application/Features/Rooms/Validators/CreateRoomCommandValidator.cs
+
 using FluentValidation;
 using TravelAgency.Application.Features.Rooms.Commands;
 

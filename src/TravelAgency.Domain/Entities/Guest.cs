@@ -13,7 +13,7 @@ public class Guest
     public string Email { get; set; } = string.Empty;
     public string Phone { get; set; } = string.Empty;
     
-    // Propiedad para la relación con Booking
+    
     public Guid BookingId { get; set; }
-    public Booking Booking { get; set; } = null!; // <-- Navegación inversa
+    public Booking Booking { get; set; } = null!; 
 }

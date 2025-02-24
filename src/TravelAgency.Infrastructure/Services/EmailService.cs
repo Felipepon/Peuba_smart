@@ -1,4 +1,4 @@
-// src/TravelAgency.Infrastructure/Services/EmailService.cs
+
 using SendGrid;
 using SendGrid.Helpers.Mail;
 using System.Threading.Tasks;

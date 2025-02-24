@@ -1,4 +1,4 @@
-// src/TravelAgency.Application/Features/Bookings/Queries/GetBookingQuery.cs
+
 using MediatR;
 using TravelAgency.Application.DTOs;
 

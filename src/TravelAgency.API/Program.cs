@@ -1,5 +1,3 @@
-// src/TravelAgency.API/Program.cs
-
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using TravelAgency.Infrastructure.Data;
