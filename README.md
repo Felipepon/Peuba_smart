@@ -28,10 +28,10 @@ json
     dotnet ef database update --project src/TravelAgency.Infrastructure
 
 ## 🔑 Autenticación
-Genera tokens JWT para pruebas: 
-  ```bash
-  POST /api/auth/login
-  Body: "Agent"  # Rol: Agent (Gestión) | Traveler (Reservas)
+  Genera tokens JWT para pruebas: 
+    ```bash
+    POST /api/auth/login
+    Body: "Agent"  # Rol: Agent (Gestión) | Traveler (Reservas)
 
 ## 📚 Documentación de Endpoints
 Accede a Swagger UI en desarrollo:  
@@ -46,6 +46,22 @@ Accede a Swagger UI en desarrollo:
 
 ## 🧪 Ejecutar Pruebas
 - **Unitarias**: `dotnet test`
+
+## 🏗️ Despliegue con Docker
+  Para desplegar la aplicación usando contenedores Docker (API + MySQL):
+
+  1. Asegúrate de tener Docker Desktop y Docker Compose instalados.
+  2. En la raíz del proyecto (donde se encuentra docker-compose.yml), ejecuta:
+      ```bash
+      docker compose up --build
+
+  3. Cuando finalice el build, Docker levantará:
+    Un contenedor MySQL configurado con la base de datos TravelAgencyDB.
+    Un contenedor API que se mapeará en el puerto especificado en docker-compose.yml (por ejemplo, 5086 u 5886).
+  
+  4. Accede a la aplicación en tu navegador:
+      ```bash
+      http://localhost:5086/swagger
 
 
 
